@@ -1,6 +1,6 @@
 ---
 title: "研究グループ管理者"
-weight: 20
+weight: 30
 bookFlatSection: true
 ---
 

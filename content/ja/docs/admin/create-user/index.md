@@ -1,6 +1,6 @@
 ---
 title: "新規ユーザ登録"
-weight: 21
+weight: 31
 bookFlatSection: true
 ---
 
