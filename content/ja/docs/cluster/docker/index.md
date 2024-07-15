@@ -59,7 +59,23 @@ docker images -a
 ## 取得したDockerイメージからDockerコンテナの作成
 
 ```sh
-docker run -it -v ~/data:/code --gpus all --name test-container nvidia/cuda:11.7.1-cudnn8-runtime-ubuntu20.04
+kakehi@igpu01:~$ docker run -it -v ~/data --gpus all --name test-container nvidia/cuda:11.7.1-cudnn8-runtime-ubuntu20.04
+
+# ==========
+# == CUDA ==
+# ==========
+
+# CUDA Version 11.7.1
+
+# Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+# This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+# By pulling and using the container, you accept the terms and conditions of this license:
+# https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+# A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+# root@5f6b512b8498:/#
 ```
 
 オプションについて：
