@@ -1,19 +1,18 @@
 ---
 title: "SSH接続"
 weight: 11
-bookFlatSection: true
 ---
 
 # SSH接続
 
-{{< hint info >}}
+{{< hint warning >}}
 クライアントPCが教員セグメントまたは研究室セグメントに接続されていることを前提としています。
 {{</ hint >}}
 
-共有GPUサーバーに `ssh` 接続してみましょう。
+OMUI ServerにSSH接続してみましょう。
 
 ```bash
-ssh [username]@[igpu01のIPアドレス]
+ssh [username]@172.26.43.2
 ```
 
 ## パスワード変更
@@ -48,12 +47,12 @@ ssh-keygen
 サーバー上の `$HOME/.ssh` 以下にコピーされます。
 
 ```bash
-ssh-copy-id [username]@[igpu01のIPアドレス]
+ssh-copy-id [username]@172.26.43.2
 ```
 
 動作確認しましょう。
 以下のコマンドを実行して、パスワードを入力せずにSSH接続できることを確認してください。
 
 ```bash
-ssh [username]@[igpu01のIPアドレス]
+ssh [username]@172.26.43.2
 ```

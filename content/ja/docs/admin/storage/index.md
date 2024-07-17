@@ -1,7 +1,7 @@
 ---
 title: "ストレージ管理"
 weight: 32
-bookFlatSection: true
+type: 'docs'
 ---
 
 # ストレージ管理
@@ -12,7 +12,7 @@ bookFlatSection: true
 指定したディレクトリの合計容量を調べることができます。
 
 ```bash
-sudo du -sh /home/[username]
+sudo ncdu /home/[username]
 ```
 
 ## ストレージの使用状況 (システム全体)
@@ -20,5 +20,5 @@ sudo du -sh /home/[username]
 システム全体のストレージの使用状況を調べるには以下のコマンドを実行してください。
 
 ```bash
-df -h
+sudo df -h
 ```

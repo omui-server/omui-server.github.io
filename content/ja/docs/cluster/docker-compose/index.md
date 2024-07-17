@@ -1,7 +1,6 @@
 ---
 title: "Docker Compose"
-weight: 32
-bookFlatSection: true
+weight: 25
 ---
 
 # Docker Compose
@@ -15,6 +14,8 @@ Under construction...
 `docker-compose.yml`ファイルを作成します。このファイルには、使用するDockerイメージと、作成するコンテナの設定を記述します。
 
 ```yaml
+# docker-compose.yml
+
 services:
   project:
     image: nvidia/cuda:12.5.1-cudnn-devel-ubuntu22.04

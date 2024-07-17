@@ -1,11 +1,15 @@
 ---
-title: "計算リソース"
-weight: 34
-bookFlatSection: true
+title: "リソース一覧"
+weight: 23
 ---
 
-# 計算リソース
+# リソース一覧
 
-|ノード名|GPU|GPU枚数|GPUメモリ<br>(GB/GPU)|メインメモリ<br>(GB/GPU)|CPU (コア)|
+{{< hint warning >}}
+こちらに記載されているノード名は大学のDNSサーバーに登録されていません。
+SSH接続する際はIPアドレスを直接入力するか、クライアントPC上でノード名とIPアドレスの対応を設定してください。
+{{</ hint >}}
+
+|ノード名<br>IPアドレス|GPU|GPU<br>枚数|GPUメモリ<br>(GB/GPU)|メインメモリ<br>(GB/GPU)|CPU<br>(コア)|
 |---|---|---|---|---|---|
-|`igpu01`|H100 PCIe|4|80|192|48|
+|`igpu01`<br>`172.26.43.2`|H100 80GB PCIe|4|80|192|48|

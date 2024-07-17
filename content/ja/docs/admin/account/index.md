@@ -1,7 +1,7 @@
 ---
 title: "ユーザ管理"
 weight: 31
-bookFlatSection: true
+type: 'docs'
 ---
 
 # ユーザ管理
@@ -13,6 +13,8 @@ OMUI ServerではLDAPを使ってユーザ管理を行っています。
 そこで、[**LDAP Account Manager (LAM)**](https://www.ldap-account-manager.org) と呼ばれるGUIツールを使用してユーザ管理を行います。
 
 ## LAMのログイン
+
+[こちら](http://172.26.43.2) からLAMにアクセスし、LAM用の管理者パスワードでログインしてください。
 
 ## ユーザの追加
 

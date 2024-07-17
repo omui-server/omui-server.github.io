@@ -1,9 +1,10 @@
 ---
 title: "GPU Monitoring"
-weight: 35
-bookFlatSection: true
+weight: 24
 ---
 
 # GPU Monitoring
 
-- 実装中
+{{< hint info >}}
+Under construction...
+{{</ hint >}}

@@ -1,14 +1,13 @@
 ---
 title: "Docker"
-weight: 31
-bookFlatSection: true
+weight: 21
 ---
 
 # Docker
 
 {{< hint warning >}}
 OMUI ServerにはPythonがあらかじめインストールされています。
-そのため、Dockerを使わなくてもvenvなどを使って仮想環境を作ることができますが、Pythonのバージョンが古い可能性があるためおすすめできません。
+そのため、Dockerを使わなくてもvenvなどを使って仮想環境を作ることができますが、Pythonのバージョンが古い可能性があるためおすすめしません。
 {{</ hint >}}
 
 ここでは、Dockerの基本的な使い方を説明します。
@@ -21,7 +20,7 @@ Dockerについて詳しく知りたい場合は [公式ドキュメント](http
 {{</ hint >}}
 
 OMUI Serverでは [Rootless Docker](https://docs.docker.com/engine/security/rootless/) を導入しています。
-Rootless Dockerを使うことで、ユーザごとにDockerコンテナやDockerイメージの管理が可能になります。
+Rootless Dockerを使うことで、ユーザーごとにDockerコンテナやDockerイメージの管理が可能になります。
 以下のコマンドを実行し、Rootless Dockerの設定を行ってください。
 
 ```bash
@@ -55,15 +54,10 @@ $ docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
 ```bash
 $ docker container run \
   --rm \
-  --gpus all \
+  --gpus '"device=0"' \
   nvidia/cuda:12.5.1-cudnn-devel-ubuntu22.04 \
   nvidia-smi
 ```
-
-{{< hint info >}}
-ここでは `docker container run` のみ扱いましたが、 Docker にはさまざまなコマンドが用意されています。
-例えば [こちら](https://docs.docker.jp/engine/reference/commandline/container.html) を確認してください。
-{{</ hint >}}
 
 ## Docker イメージ
 
@@ -71,8 +65,8 @@ Dockerイメージを用意するには、Dockerfileを使って自分で一か�
 代表的なレジストリとして、 [Docker Hub](https://hub.docker.com/) や [NVIDIA NGC カタログ](https://catalog.ngc.nvidia.com/containers) があります。
 
 {{< hint warning >}}
-Dockerイメージを選ぶ際は、イメージに含まれるCUDA Toolkitのバージョンに注意してください。
-ホストマシンで `nvidia-smi` を実行したときに右上に表示されるバージョンが、対応しているCUDA Toolkitの最新のバージョンです。
+CUDA Toolkitが含まれるDockerイメージを選ぶ際は、イメージに含まれるCUDA Toolkitのバージョンに注意してください。
+サーバー上で `nvidia-smi` コマンドを実行したときに右上に表示されるバージョンが、対応しているCUDA Toolkitの最新のバージョンです。
 
 ( `nvidia-smi` で表示されるバージョン ≦ CUDA Toolkitのバージョン)
 {{</ hint >}}
@@ -88,13 +82,13 @@ ubuntu       latest    35a88802559d   5 weeks ago   78.1MB
 
 Dockerイメージを削除するには次のコマンドを実行します。
 
-{{< hint warning >}}
-使用しなくなったイメージは適宜削除してください。
-{{</ hint >}}
-
 ```bash
 $ docker image rm IMAGE
 ```
+
+{{< hint warning >}}
+使用しなくなったイメージは適宜削除するようにお願いします。
+{{</ hint >}}
 
 ## 参考
 
