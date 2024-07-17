@@ -1,7 +1,6 @@
 ---
 title: "ストレージ管理"
 weight: 32
-type: 'docs'
 ---
 
 # ストレージ管理

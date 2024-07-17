@@ -1,7 +1,6 @@
 ---
 title: "ユーザ管理"
 weight: 31
-type: 'docs'
 ---
 
 # ユーザ管理

@@ -45,7 +45,7 @@ $ docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
 # コンテナ内の作業ディレクトリのパス
 --workdir PATH
 
-# GPUの割り当て (--gpus all はノード中のすべてのGPUを割り当てる)
+# GPUの割り当て
 --gpus DEVICE
 ```
 

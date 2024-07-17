@@ -1,6 +1,6 @@
 ---
 title: "イントロダクション"
-weight: 00
+type: docs
 ---
 
 # OMUI Server ユーザーガイド
@@ -15,7 +15,7 @@ OMUI Server は個人が独占して使用するものではなく、情報学�
 ## 目次
 
 - [**Getting Started**]({{< relref "/docs/getting-started" >}})
-  - [SSH接続]({{< relref "/docs/getting-started/ssh" >}})
+  - [ログイン]({{< relref "/docs/getting-started/login" >}})
   - [ストレージ]({{< relref "/docs/getting-started/storage" >}})
 - [**GPU利用ガイド**]({{< relref "/docs/cluster" >}})
   - [Docker]({{< relref "/docs/cluster/docker" >}})
