@@ -4,82 +4,99 @@ weight: 40
 bookFlatSection: true
 ---
 
-# Dockerを用いた環境構築
+# Docker
 
-ここでは、CUDA v.11.7.1とcudnn v8、pytorch、ubuntu22.04を使ったGPU環境の構築を行います。
-
-{{< hint info >}}
-Dockerとは何か？についてはここでは深く扱いません。
-概要の把握にはこちらの[解説記事](https://knowledge.sakura.ad.jp/13265/)を参考にしてください
+{{< hint warning >}}
+OMUI ServerにはPythonがあらかじめインストールされています。
+そのため、Dockerを使わなくてもvenvなどを使って仮想環境を作ることができますが、Pythonのバージョンが古い可能性があるためおすすめできません。
 {{</ hint >}}
 
-## rootless-docker-installのインストール(初回ログイン時のみ)
+ここでは、Dockerの基本的な使い方を説明します。
+Dockerについて詳しく知りたい場合は [公式ドキュメント](https://docs.docker.com/) などを確認してください。
 
-```sh
-rootless-docker-install
+## Rootless Dockerの設定
+
+{{< hint info >}}
+一度のみ行ってください。インストール済みの場合は不要です
+{{</ hint >}}
+
+OMUI Serverでは [Rootless Docker](https://docs.docker.com/engine/security/rootless/) を導入しています。
+Rootless Dockerを使うことで、ユーザごとにDockerコンテナやDockerイメージの管理が可能になります。
+以下のコマンドを実行し、Rootless Dockerの設定を行ってください。
+
+```bash
+$ rootless-docker-install
 ```
 
-## 使用するDocker imageの確認
+## Docker コンテナ
 
-NVIDIA公式が公開しているDocker Hubから、今回対象とするDocker imageを検索します。
-今回は[このサイト](https://hub.docker.com/layers/nvidia/cuda/11.7.1-cudnn8-runtime-ubuntu20.04/images/sha256-2028e3ca7cf0f77554c352d9b3eabe4c2a8a46d0843dc3ed514ea6f1df77b7eb?context=explore) で公開されているイメージを使います。
+```bash
+$ docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
+```
+を実行すると、Dockerコンテナを新規作成し、コンテナ内で `[COMMAND]` を実行します。
 
+代表的なオプションとして次のようなものがあります。
+```bash
+# コンテナ終了時に、自動的に削除
+--rm
 
-![alt text](<img/tag_list.png>)
+# SRCをDSTにバインドマウントする
+--volume SRC:DST
 
-右側にコマンドがあるので、それをそのままコピーして使用します。
+# コンテナ内の作業ディレクトリのパス
+--workdir PATH
 
-```sh
-docker pull nvidia/cuda:11.7.1-cudnn8-runtime-ubuntu20.04
-
-# kakehi@igpu01:~$ docker pull nvidia/cuda:11.7.1-cudnn8-runtime-ubuntu20.04
-# 11.7.1-cudnn8-runtime-ubuntu20.04: Pulling from nvidia/cuda
-# 96d54c3075c9: Pull complete
-# de0e511d4373: Pull complete
-# 90edf2d312fb: Pull complete
-# 06c0c9b8f03c: Pull complete                                                                                                                                                                                                       de5c517a4a38: Pull complete                                                                                                                                                                                                       c3b1e2de66ed: Pull complete
-# d60ce4d201dd: Pull complete                                                                                                                                                                                                       a3cdd5646806: Pull complete
-# 224f8359e493: Pull complete
-# a1b532915622: Pull complete
-# Digest: sha256:1433088e22d58d19222adbfd05b81d751d5a9f6098e39ee6c9b537709d78e362
-# Status: Downloaded newer image for nvidia/cuda:11.7.1-cudnn8-runtime-ubuntu20.04
-# docker.io/nvidia/cuda:11.7.1-cudnn8-runtime-ubuntu20.04
+# GPUの割り当て (--gpus all はノード中のすべてのGPUを割り当てる)
+--gpus DEVICE
 ```
 
-取得したイメージの確認には次のコマンドを使用します
+以下の例は、 [Docker Hub](https://hub.docker.com/) で公開されている `nvidia/cuda:12.5.1-cudnn-devel-ubuntu22.04` というDockerイメージを用い、コンテナ内で `nvidia-smi` コマンドを実行する例です。
 
-```sh
-docker images -a
-
-# kakehi@igpu01:~$ docker images -a
-# REPOSITORY    TAG                                 IMAGE ID       CREATED         SIZE
-# nvidia/cuda   11.7.1-cudnn8-runtime-ubuntu20.04   c2342e6e8bfe   8 months ago    2.92GB
+```bash
+$ docker container run \
+  --rm \
+  --gpus all \
+  nvidia/cuda:12.5.1-cudnn-devel-ubuntu22.04 \
+  nvidia-smi
 ```
 
-## 取得したDockerイメージからDockerコンテナの作成
+{{< hint info >}}
+ここでは `docker container run` のみ扱いましたが、 Docker にはさまざまなコマンドが用意されています。
+例えば [こちら](https://docs.docker.jp/engine/reference/commandline/container.html) を確認してください。
+{{</ hint >}}
 
-```sh
-kakehi@igpu01:~$ docker run -it -v ~/data --gpus all --name test-container nvidia/cuda:11.7.1-cudnn8-runtime-ubuntu20.04
+## Docker イメージ
 
-# ==========
-# == CUDA ==
-# ==========
+Dockerイメージを用意するには、Dockerfileを使って自分で一からDockerイメージを作成するか、Dockerレジストリから取得する必要があります。
+代表的なレジストリとして、 [Docker Hub](https://hub.docker.com/) や [NVIDIA NGC カタログ](https://catalog.ngc.nvidia.com/containers) があります。
 
-# CUDA Version 11.7.1
+{{< hint warning >}}
+Dockerイメージを選ぶ際は、イメージに含まれるCUDA Toolkitのバージョンに注意してください。
+ホストマシンで `nvidia-smi` を実行したときに右上に表示されるバージョンが、対応しているCUDA Toolkitの最新のバージョンです。
 
-# Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+( `nvidia-smi` で表示されるバージョン ≦ CUDA Toolkitのバージョン)
+{{</ hint >}}
 
-# This container image and its contents are governed by the NVIDIA Deep Learning Container License.
-# By pulling and using the container, you accept the terms and conditions of this license:
-# https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+取得済のイメージの確認には次のコマンドを使用します
 
-# A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+```bash
+$ docker images
 
-# root@5f6b512b8498:/#
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+ubuntu       latest    35a88802559d   5 weeks ago   78.1MB
 ```
 
-オプションについて：
+Dockerイメージを削除するには次のコマンドを実行します。
 
-- **`-v ~/data:/code`**：ホストマシンのディスク領域をコンテナ内の`/code`ディレクトリにマウントします。例えば、ホストマシンの`~/data`ディレクトリがコンテナ内の`/code`ディレクトリと対応します。
-- **`--name test-container`**：コンテナに名前を付けます。ここでは`test-container`という名前を使用しています。
-- **`--gpus all`**：コンテナがホストマシンのすべてのGPUを使用できるようにします。
+{{< hint warning >}}
+使用しなくなったイメージは適宜削除してください。
+{{</ hint >}}
+
+```bash
+$ docker image rm IMAGE
+```
+
+## 参考
+
+- [Docker入門（第一回）～Dockerとは何か、何が良いのか～](https://knowledge.sakura.ad.jp/13265/)
+- [実践 Docker - ソフトウェアエンジニアの「Docker よくわからない」を終わりにする本](https://zenn.dev/suzuki_hoge/books/2022-03-docker-practice-8ae36c33424b59)
