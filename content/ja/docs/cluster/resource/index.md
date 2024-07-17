@@ -1,6 +1,6 @@
 ---
 title: "計算リソース"
-weight: 38
+weight: 34
 bookFlatSection: true
 ---
 

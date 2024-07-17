@@ -1,6 +1,6 @@
 ---
 title: "GPU Monitoring"
-weight: 39
+weight: 35
 bookFlatSection: true
 ---
 
