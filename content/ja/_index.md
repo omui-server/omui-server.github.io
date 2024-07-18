@@ -21,7 +21,7 @@ OMUI Server は個人が独占して使用するものではなく、情報学�
   - [Docker]({{< relref "/docs/cluster/docker" >}})
   - [リソース割り当て]({{< relref "/docs/cluster/resource-allocation" >}})
   - [リソース一覧]({{< relref "/docs/cluster/resource" >}})
-  - [GPU Monitoring]({{< relref "/docs/cluster/monitoring" >}}) *(under construction... / 飛ばしてください)*
+  - [GPU Monitoring]({{< relref "/docs/cluster/monitoring" >}})
   - [Docker Compose]({{< relref "/docs/cluster/docker-compose" >}}) *(under construction... / 飛ばしてください)*
 
 ## 質問やコメント

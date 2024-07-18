@@ -14,6 +14,7 @@ bookFlatSection: true
 
 - Slackの [#use_computer](https://omuiserver.slack.com/archives/C07CEM8HT1D) チャンネルをチェック
 - サーバー上で `nvidia-smi` コマンドを実行し、利用状況をチェック
+- [GPUモニタリングツール](/docs/cluster/monitoring) をチェック
 
 ## 利用宣言
 

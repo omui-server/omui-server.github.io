@@ -14,6 +14,7 @@ Make sure no one else is using the resource you want to use.
 
 - Check the [#use_computer](https://omuiserver.slack.com/archives/C07CEM8HT1D) channel
 - Run `nvidia-smi` command on the server and check the usage status
+- Check the [GPU monitoring tool](/docs/cluster/monitoring)
 
 ## Declare when you use
 
