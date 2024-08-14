@@ -12,7 +12,7 @@ weight: 11
 OMUI Serverにログインしてみましょう。
 
 ```bash
-$ ssh [username]@172.26.43.2
+$ ssh [username]@172.26.59.40
 ```
 
 ## パスワード変更
@@ -46,12 +46,12 @@ $ ssh-keygen
 次に、作成した公開鍵をサーバーにコピーします。
 
 ```bash
-$ ssh-copy-id [username]@172.26.43.2
+$ ssh-copy-id [username]@172.26.59.40
 ```
 
 動作確認しましょう。
 以下のコマンドを実行して、パスワードを入力せずにSSH接続できることを確認してください。
 
 ```bash
-$ ssh [username]@172.26.43.2
+$ ssh [username]@172.26.59.40
 ```
