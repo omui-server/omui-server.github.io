@@ -27,7 +27,6 @@ To ensure smooth and safe use of the server, please read this document from begi
   - [Resource Allocation]({{< relref "/docs/cluster/resource-allocation" >}})
   - [Resources]({{< relref "/docs/cluster/resource" >}})
   - [GPU Monitoring]({{< relref "/docs/cluster/monitoring" >}})
-  - [Docker Compose]({{< relref "/docs/cluster/docker-compose" >}}) *(under construction... / please skip)*
 
 ## Questions / Comments
 
