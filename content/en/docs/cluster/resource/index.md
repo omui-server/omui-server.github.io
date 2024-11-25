@@ -12,4 +12,4 @@ When connecting via SSH, enter the IP address directly or set the correspondence
 
 |Nodename<br>IP address|GPU|Number of GPUs|GPU memory<br>(GB/GPU)|Main memory<br>(GB/GPU)|CPU<br>(core)|
 |---|---|---|---|---|---|
-|`igpu01`<br>`172.26.43.2`|H100 80GB PCIe|4|80|192|48|
+|`igpu01`<br>`172.26.59.40`|H100 80GB PCIe|4|80|192|48|

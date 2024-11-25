@@ -5,6 +5,14 @@ weight: 31
 
 # ユーザ管理
 
+## OMUI Server Account Manager
+
+OMUI Serverでは、ユーザ管理を行うためのGUIツールとして **OMUI Server Account Manager** を提供しています。
+
+## ログイン
+
+[こちら](http://172.26.59.40/accounts
+
 ## LDAP Account Manager (LAM)
 
 OMUI ServerではLDAPを使ってユーザ管理を行っています。

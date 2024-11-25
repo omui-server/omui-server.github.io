@@ -7,7 +7,7 @@ weight: 24
 
 OMUI Server provides a job and server status monitoring tool using Grafana.
 
-[Click here](http://172.26.43.2:3000/) to access the monitoring tool.
+[Click here](http://172.26.59.40/) to access the monitoring tool.
 
 ## GPU Processes
 

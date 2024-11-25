@@ -12,7 +12,7 @@ Please make sure that your client PC is connected to teacher segments or researc
 Let's login to the server:
 
 ```bash
-$ ssh [username]@172.26.43.2
+$ ssh [username]@172.26.59.40
 ```
 
 ## Change your password
@@ -47,12 +47,12 @@ $ ssh-keygen
 Next, copy the public key to the server.
 
 ```bash
-$ ssh-copy-id [username]@172.26.43.2
+$ ssh-copy-id [username]@172.26.59.40
 ```
 
 Let's check if it works.
 Run the following command and confirm that you can login without entering a password.
 
 ```bash
-$ ssh [username]@172.26.43.2
+$ ssh [username]@172.26.59.40
 ```

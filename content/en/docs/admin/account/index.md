@@ -12,7 +12,7 @@ Since editing LDAP with CLI is not easy, we use [**LDAP Account Manager (LAM)**]
 
 ## Login to LAM
 
-[Click here](http://172.26.43.2) to open LAM, and login with the LAM admin credentials.
+[Click here](http://172.26.59.40/lam/) to open LAM, and login with the LAM admin credentials.
 
 ## Adding users
 

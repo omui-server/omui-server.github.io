@@ -26,7 +26,7 @@ Please copy only the data you need to the OMUI Server storage, and delete data w
 You can copy your data from your client PCs to OMU Server by using `scp` command:
 
 ```bash
-$ scp [SRC] [username]@172.26.43.2:[DST]
+$ scp [SRC] [username]@172.26.59.40:[DST]
 ```
 
 {{< hint info >}}
