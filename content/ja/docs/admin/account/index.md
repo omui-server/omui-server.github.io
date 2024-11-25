@@ -11,84 +11,46 @@ OMUI Serverでは、ユーザ管理を行うためのGUIツールとして **OMU
 
 ## ログイン
 
-[こちら](http://172.26.59.40/accounts
+[こちら](http://172.26.59.40/accounts) からOMUI Server Account Managerにアクセスし、OMUI Serverの認証情報 (SSH接続する際の認証情報) を使ってログインしてください。
 
-## LDAP Account Manager (LAM)
+{{< hint warning >}}
+ログインするには、OMUI Serverに研究グループ管理者として登録されている必要があります。
+{{</ hint >}}
 
-OMUI ServerではLDAPを使ってユーザ管理を行っています。
-しかし、LDAPをコマンドで操作するのは少し手間です。
-そこで、[**LDAP Account Manager (LAM)**](https://www.ldap-account-manager.org) と呼ばれるGUIツールを使用してユーザ管理を行います。
-
-## LAMのログイン
-
-[こちら](http://172.26.59.40/lam) からLAMにアクセスし、LAM用の管理者パスワードでログインしてください。
+![image](img/account-manager-login.png)
 
 ## ユーザの追加
 
-### ユーザ情報の入力
+OMUI Server Account Managerにログインし、右上の "Add User" をクリックしてください。
+アカウント作成画面が表示されます。
 
-LAMにログインし、左上の "New user" をクリックしてください。
-ユーザ編集画面が表示されます。
+### ユーザ情報
 
 最初に個人情報を聞かれるので、以下の情報を入力してください。
-他の項目は空欄でOKです。
 
 - **First name**: ユーザの名
 - **Last name**: ユーザの姓
-- **Contact data**
-  - **Email address**: ユーザの大学のメールアドレス
+- **OMU Email**: ユーザの大学ドメイン (`*.omu.ac.jp`, `*.osakafu-u.ac.jp`, `*.osaka-cu.ac.jp`) のメールアドレス
 
-![image](img/lam-new-user-personal.png)
+![image](img/account-manager-add-user.png)
 
-左のタブから "Unix" を選択し、以下の情報を入力してください。
-他の項目は空欄でOKです。
+### パスワード
 
-- **User name**: 希望するユーザ名
-- **Primary group**: 研究グループIDを選択
+ユーザの個人情報の入力が完了し、Registerボタンを押すと、ユーザの認証情報が表示されます。
+認証情報はアカウント作成者が本人に共有してください。
+認証情報は一度しか表示されないので、メモしておいてください。
 
-![image](img/lam-new-user-unix.png)
-
-{{< hint info >}}
-ホームディレクトリはユーザが初回ログイン時に自動生成されます。
-(所有者はユーザ、所有グループはユーザの)
-そのため、管理者が手動で作成する必要はありません。
-{{</ hint >}}
-
-### パスワードの設定
-
-左上の "Set password" を開き、 "Set random password" をクリックします。
-初期パスワードが生成されるので、こちらをどこかにメモしておきます。
-メモしたらOKを押します。
-
-![image](img/lam-set-password.png)
-
-### 保存
-
-以上が完了したら左上の "Save" をクリックします。
-ユーザがLDAPに登録されます。
-
-登録が完了したら、以下のログイン情報をユーザに連絡してください。
-
-{{< hint info >}}
-**ログイン情報**
-
-- ユーザ名
-- 初期パスワード
-{{</ hint >}}
+![image](img/account-manager-add-user-password.png)
 
 ## ユーザの編集
 
-LAMにログインし、編集したいユーザの編集ボタン (鉛筆のアイコン) をクリックします。
-ユーザ編集画面が開きます。
+OMUI Server Account Managerにログインし、編集したいユーザの編集ボタン (鉛筆のアイコン) をクリックします。
 
-![image](img/lam-users-list.png)
+![image](img/account-manager-user-list.png)
 
-必要な情報を編集し、最後に左上の "Save" をクリックしてください。
+![image](img/account-manager-edit-user.png)
 
-## 管理者権限の付与
+## 研究グループ管理者の追加
 
-特定のユーザに管理者権限を付与したい場合は、ユーザ編集画面のUnixタブを開き、"Additional groups" に以下のグループを追加してください。
-
-- `omuiadmin`
-
-このグループに所属するユーザは `sudo` コマンドを使用できるようになります。
+特定のユーザを研究グループ管理者にする場合は、ユーザ編集画面を開き、Roleを "Admin" に変更してください。
+研究グループ管理者は、サーバ上で `sudo` コマンドを使用できるようになりますので、設定には注意してください。
