@@ -21,7 +21,7 @@ You must be registered as a research group administrator on OMUI Server to log i
 
 ## Adding users
 
-Log in to OMUI Server Account Manager and click "Add User" in the upper right corner.
+Log in to OMUI Server Account Manager and click **Add User** in the upper right corner.
 The account creation page will appear.
 
 ### User information
@@ -52,5 +52,5 @@ Log in to OMUI Server Account Manager and click the edit button (pencil icon) fo
 
 ## Adding research group administrators
 
-To make a specific user a research group administrator, open the user edit screen and change the Role to "Admin".
+To make a specific user a research group administrator, open the user edit screen and change the Role to **Admin**.
 Research group administrators will be able to use the `sudo` command on the server, so be careful with the settings.
