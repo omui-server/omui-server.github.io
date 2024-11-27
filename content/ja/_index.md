@@ -23,6 +23,12 @@ OMUI Server は個人が独占して使用するものではなく、情報学�
   - [リソース一覧]({{< relref "/docs/cluster/resource" >}})
   - [GPU Monitoring]({{< relref "/docs/cluster/monitoring" >}})
 
-## 質問やコメント
+## お問い合わせ
 
-質問やコメントがあればSlackの [#support](https://omuiserver.slack.com/archives/C07CXNBBB0C) チャンネルでお知らせください。
+### Slack
+
+OMUI ServerのSlackに加入済みで、他のユーザに公開可能な内容の場合は、Slackの [#support](https://omuiserver.slack.com/archives/C07CXNBBB0C) チャンネルにてお問い合わせください。
+
+### メール
+
+OMUI ServerのSlackに未加入の場合や、内容を他のユーザに公開できない場合は、株式会社Affectify OMUI Server管理担当 omuiserver@affectify.jp までお問い合わせください。

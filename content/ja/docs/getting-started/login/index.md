@@ -6,7 +6,7 @@ weight: 11
 # ログイン
 
 {{< hint warning >}}
-クライアントPCが教員セグメントまたは研究室セグメントに接続されていることを前提としています。
+OMUI Serverにログインするには、クライアントPCがOMUNET (OMUNET-1X, VPNなど) に接続されている必要があります。
 {{</ hint >}}
 
 OMUI Serverにログインしてみましょう。

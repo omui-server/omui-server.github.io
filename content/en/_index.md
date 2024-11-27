@@ -30,4 +30,12 @@ To ensure smooth and safe use of the server, please read this document from begi
 
 ## Questions / Comments
 
-If you have any questions or comments, please let us know in our [#support](https://omuiserver.slack.com/archives/C07CXNBBB0C) channel.
+If you have any questions or comments, please let us know in our Slack or by email.
+
+### Slack
+
+If you are already a member of the OMUI Server Slack and the content can be shared with other users, please contact us in the [#support](https://omuiserver.slack.com/archives/C07CXNBBB0C) channel.
+
+### Email
+
+If you are not a member of the OMUI Server Slack or if you want to send us personal information, please contact us at [omuiserver@affectify.jp](mailto:omuiserver@affectify.jp).

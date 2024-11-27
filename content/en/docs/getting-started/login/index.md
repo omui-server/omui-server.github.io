@@ -6,7 +6,7 @@ weight: 11
 # Login
 
 {{< hint warning >}}
-Please make sure that your client PC is connected to teacher segments or research group segments of the graduate school of informatics in OMU network.
+Please make sure that your client PC is connected to OMUNET (e.g. OMUNET-1X, VPN) to login to the OMUI Server.
 {{</ hint >}}
 
 Let's login to the server:
