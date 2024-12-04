@@ -25,10 +25,9 @@ OMUI Server は個人が独占して使用するものではなく、情報学�
 
 ## お問い合わせ
 
-### Slack
+Slackに加入済みの場合は、まずはSlackの [#support](https://omuiserver.slack.com/archives/C07CXNBBB0C) チャンネルにてお問い合わせください。
+同様の問題で困っておられる方の助けにもなりますので、公開可能な内容であればSlackをご利用ください。
 
-OMUI ServerのSlackに加入済みで、他のユーザに公開可能な内容の場合は、Slackの [#support](https://omuiserver.slack.com/archives/C07CXNBBB0C) チャンネルにてお問い合わせください。
+Slackに未加入の場合や、Slackでの共有がためらわれる内容に関しては、株式会社Affectify OMUI Server管理担当 omuiserver@affectify.jp へご連絡ください。
 
-### メール
-
-OMUI ServerのSlackに未加入の場合や、内容を他のユーザに公開できない場合は、株式会社Affectify OMUI Server管理担当 omuiserver@affectify.jp までお問い合わせください。
+また、個人情報を含むなど特殊なケースについては ishimaru@affectify.jp へご連絡いただきましたら石丸や担当者が個別に対応いたします。

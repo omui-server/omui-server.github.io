@@ -1,6 +1,6 @@
 ---
 title: "Resource Allocation"
-weight: 22
+weight: 23
 ---
 
 # Resource allocation

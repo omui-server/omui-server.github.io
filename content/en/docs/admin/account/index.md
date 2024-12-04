@@ -14,6 +14,10 @@ OMUI Server provides a GUI tool called **OMUI Server Account Manager** for user 
 [Click here](http://172.26.59.40/accounts) to open OMUI Server Account Manager, and login with your OMUI Server credentials (the credentials used for SSH connection).
 
 {{< hint warning >}}
+This tool is only accessible from the OMUNET.
+{{</ hint >}}
+
+{{< hint warning >}}
 You must be registered as a research group administrator on OMUI Server to log in.
 {{</ hint >}}
 

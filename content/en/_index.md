@@ -28,14 +28,12 @@ To ensure smooth and safe use of the server, please read this document from begi
   - [Resources]({{< relref "/docs/cluster/resource" >}})
   - [GPU Monitoring]({{< relref "/docs/cluster/monitoring" >}})
 
-## Questions / Comments
+## Contact
 
-If you have any questions or comments, please let us know in our Slack or by email.
+If you have already joined our Slack, please contact us in the [#support](https://omuiserver.slack.com/archives/C07CXNBBB0C) channel.
+As it may help others who are having similar problems, please use Slack if the content can be shared publicly.
 
-### Slack
+If you are not a member of our Slack or if you are hesitant to share the content on Slack, please contact Affectify Inc. OMUI Server Team at omuiserver@affectify.jp .
 
-If you are already a member of the OMUI Server Slack and the content can be shared with other users, please contact us in the [#support](https://omuiserver.slack.com/archives/C07CXNBBB0C) channel.
-
-### Email
-
-If you are not a member of the OMUI Server Slack or if you want to send us personal information, please contact us at [omuiserver@affectify.jp](mailto:omuiserver@affectify.jp).
+For special cases such as those involving personal information, please contact ishimaru@affectify.jp .
+Ishimaru or the person in charge will respond to you individually.

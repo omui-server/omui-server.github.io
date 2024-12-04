@@ -1,9 +1,13 @@
 ---
 title: "GPU Monitoring"
-weight: 24
+weight: 25
 ---
 
 # GPU Monitoring
+
+{{< hint warning >}}
+本ツールへは、OMUNETからのみアクセス可能です。
+{{</ hint >}}
 
 OMUI ServerではGrafanaを使った、ジョブおよびサーバーステータスのモニタリングツールを用意しています。
 

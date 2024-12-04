@@ -14,6 +14,10 @@ OMUI Serverでは、ユーザ管理を行うためのGUIツールとして **OMU
 [こちら](http://172.26.59.40/accounts) からOMUI Server Account Managerにアクセスし、OMUI Serverの認証情報 (SSH接続する際の認証情報) を使ってログインしてください。
 
 {{< hint warning >}}
+本ツールへは、OMUNETからのみアクセス可能です。
+{{</ hint >}}
+
+{{< hint warning >}}
 ログインするには、OMUI Serverに研究グループ管理者として登録されている必要があります。
 {{</ hint >}}
 
